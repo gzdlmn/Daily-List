@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+    My Daily List
+{% endblock %}
+{% block body %}
+<header class="container-fluid p-0">
+    <div class="container h-100">
+        <div class="row align-items-center h-50">
+            <div class="col-md-6 mx-auto text-center">
+                <h2>Have you ever wondered how many hours you sleep on average or how many liters of water you drink or how many steps you take in a day<i style="color:#FFFF00;" class="bi bi-question"></i></h2>
+                <hr/>
+                <h3>This program will keep you informed of the ordinary things you do daily <i style="color:#FFFF00;" class="bi bi-question"></i></h3>
+                <hr/>
+                <h5>Now</h5>
+                <h5>let's start keeping your diary</h5>
+                <i style="font-size:2rem;" class="bi bi-arrow-down"></i>
+                <h5><a style="text-decoration:none;" href="{% url 'user:register' %}">Come on, sign up too</a></h5>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="container-fluid">
+    <div class="container h-100">
+        <div class="row align-items-center h-100">
+           <div class="col-md-6 col-lg-4 mx-auto text-center">
+               <h3>{{today}}</h3>
+               <h3>Registered User - {{user_count}} </h3>
+           </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

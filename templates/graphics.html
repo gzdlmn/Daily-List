@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% block title %}
+    My Graphics
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1 class="text-center">{{howmanydays}}{% if howmanydays == 1 %}.DAY{% else %}.DAYS{% endif %}</h1>
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 sleeping">
+            <div class="card shadow-lg my-1">
+                <div class="card-body mt-3">
+                    <h1><mark>Sleeping</mark><i class="fas fa-bed"></i></h1>
+                    <hr/>
+                    <h5>Less than 6 hours</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-danger" style="width:{{percenttotalsleepingmin6hours}}%">{{percenttotalsleepingmin6hours}}</div>
+                    </div>
+                    <hr/>
+                    <h5>6 hours</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-success" style="width:{{percenttotalsleeping6hours}}%">{{percenttotalsleeping6hours}}</div>
+                    </div>
+                    <hr/>
+                    <h5>More than 6 hours</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-primary" style="width:{{percenttotalsleepingmax6hours}}%">{{percenttotalsleepingmax6hours}}</div>
+                    </div>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 drinkingwater">
+            <div class="card shadow-lg my-1">
+                <div class="card-body mt-3">
+                    <h1><mark>Drinking</mark><i style="color:#81D4FA;" class="fas fa-tint"></i></h1>
+                    <hr/>
+                    <h5>Less than 2 liters</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-danger" style="width:{{percenttotaldrinkingwatermin2liters}}%">{{percenttotaldrinkingwatermin2liters}}</div>
+                    </div>
+                    <hr/>
+                    <h5>2 liters</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-success" style="width:{{percenttotaldrinkingwater2liters}}%">{{percenttotaldrinkingwater2liters}}</div>
+                    </div>
+                    <hr/>
+                    <h5>More than 2 liters</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-primary" style="width:{{percenttotaldrinkingwatermax2liters}}%">{{percenttotaldrinkingwatermax2liters}}</div>
+                    </div>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 steps">
+            <div class="card shadow-lg my-1">
+                <div class="card-body mt-3">
+                    <h1><mark>Steps</mark><i style="color:#ebc8b2;" class="fas fa-walking"></i></h1>
+                    <hr/>
+                    <h5>Less than 5000 steps</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-danger" style="width:{{percenttotalstepsmin5steps}}%">{{percenttotalstepsmin5steps}}</div>
+                    </div>
+                    <hr/>
+                    <h5>Between 5000-10000 steps</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-success" style="width:{{percenttotalsteps5steps}}%">{{percenttotalsteps5steps}}</div>
+                    </div>
+                    <hr/>
+                    <h5>More than 10000 steps</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-primary" style="width:{{percenttotalstepsmax5steps}}%">{{percenttotalstepsmax5steps}}</div>
+                    </div>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 sports">
+            <div class="card shadow-lg my-1">
+                <div class="card-body mt-3">
+                    <h1><mark>Exercise</mark><i style="color:#c0c0c0;" class="fas fa-dumbbell"></i></h1>
+                    <hr/>
+                    <h5>Less than 15 minutes</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-danger" style="width:{{percenttotalsportsmin15minutes}}%">{{percenttotalsportsmin15minutes}}</div>
+                    </div>
+                    <hr/>
+                    <h5>Between 15-45 minutes</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-success" style="width:{{percenttotalsports15minutes}}%">{{percenttotalsports15minutes}}</div>
+                    </div>
+                    <hr/>
+                    <h5>More than 45 minutes</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-primary" style="width:{{percenttotalsportsmax15minutes}}%">{{percenttotalsportsmax15minutes}}</div>
+                    </div>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 eating">
+            <div class="card shadow-lg my-1">
+                <div class="card-body mt-3">
+                    <h1><mark>Eating</mark><i style="color:#d4af37;" class="fas fa-utensils"></i></h1>
+                    <hr/>
+                    <h5>Mostly vegetables</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-danger" style="width:{{percenttotaleatingvegetables}}%">{{percenttotaleatingvegetables}}</div>
+                    </div>
+                    <hr/>
+                    <h5>Vegetables and meat</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-success" style="width:{{percenttotaleatingvegetablesandmeat}}%">{{percenttotaleatingvegetablesandmeat}}</div>
+                    </div>
+                    <hr/>
+                    <h5>Mostly meat</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-primary" style="width:{{percenttotaleatingmeat}}%">{{percenttotaleatingmeat}}</div>
+                    </div>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 study">
+            <div class="card shadow-lg my-1">
+                <div class="card-body mt-3">
+                    <h1><mark>Study</mark><i class="fas fa-graduation-cap"></i></h1>
+                    <hr/>
+                    <h5>Less than 1 hour</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-danger" style="width:{{percenttotalstudymin1hour}}%">{{percenttotalstudymin1hour}}</div>
+                    </div>
+                    <hr/>
+                    <h5>Between 1-3 hours</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-success" style="width:{{percenttotalstudybetween1and3hours}}%">{{percenttotalstudybetween1and3hours}}</div>
+                    </div>
+                    <hr/>
+                    <h5>More than 3 hours</h5>
+                    <div style="height:30px;" class="progress">
+                        <div class="progress-bar bg-primary" style="width:{{percenttotalstudymax3hours}}%">{{percenttotalstudymax3hours}}</div>
+                    </div>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section style="height:200px;" class="container p-0">
+    <div style="background:url('media/chat.svg') no-repeat center center;background-size:contain;" class="container h-100">
+        <div class="row align-items-center h-100">
+            <div class="col-md-6 col-lg-4 mx-auto">
+                <h4 style="letter-spacing:1.5px;">If you have a question you want to add, send it<i class="bi bi-chat-dots-fill"></i><i class="bi bi-chat-dots-fill"></i><i class="bi bi-chat-dots-fill"></i></h4>
+                <form method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {{field}}
+                    {% endfor %}
+                    <button type="submit" class="btn btn-success btn-block">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

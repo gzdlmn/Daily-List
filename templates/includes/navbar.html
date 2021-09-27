@@ -1,0 +1,31 @@
+<div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg p-3 px-3 m-3">
+        <a style="font-size:2rem;" class="navbar-brand ml-3" href="{% url 'home' %}">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="bi bi-pencil-fill"></i></span>
+        </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav ml-auto mr-5">
+               <li class="nav-item mx-3">
+                   <a style="font-size:2rem;" class="nav-link" href="{% url 'daily' %}">My Daily List</a>
+               </li>
+               {% if request.user.is_authenticated %}
+               <li class="nav-item mx-3">
+                   <a style="font-size:2rem;" class="nav-link" href="{% url 'user:logout' %}">Logout</a>
+               </li>
+               {% else %}
+                <li class="nav-item mx-3">
+                   <a style="font-size:2rem;" class="nav-link" href="{% url 'user:login' %}">Login<span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item mx-3">
+                   <a style="font-size:2rem;" class="nav-link" href="{% url 'user:register' %}">Register</a>
+               </li>
+               {% endif %}
+               <li class="nav-item mx-3">
+                   <a style="font-size:2rem;" class="nav-link" href="{% url 'graphics' %}">Graphics</a>
+               </li>
+           </ul>
+       </div>
+    </nav>
+</div>
+
