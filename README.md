@@ -12,3 +12,8 @@ This project has written with django framework
 python manage.py runserver 
 ### to create an admin 
 python manage.py create superuser
+
+#### Responsive Design
+**Bootstrap 4**
+https://getbootstrap.com/docs/4.5/getting-started/introduction/
+from this address, project folders downloaded to the project.
